@@ -1,0 +1,40 @@
+<div class="p-t-50">
+
+    <form [formGroup]="formPage" class="border-a-gray p-v-20 p-h-50 w-300 m-auto" (submit)="btnOnUpdate()">
+        <div class="flex-row  align-items-center p-v-10">
+            <div class="flex-shrink font-old-stamper w-80">name</div>
+            <div>{{userName}}</div>
+        </div>
+        <div class="flex-row align-items-center p-v-10">
+            <div class="flex-shrink font-old-stamper w-80">gender</div>
+            <div class="font-size-12 flex-grow flex-row align-items-center line-h-20 p-v-15 position-relative">
+                <mat-radio-group class="flex-grow font-size-16" formControlName="gender">
+
+                    <mat-radio-button color="primary" class="m-r-20" value="male">male</mat-radio-button>
+                    <mat-radio-button color="primary" value="female">female</mat-radio-button>
+                </mat-radio-group>
+                <div class="mat-div-error" *ngIf="formPage.controls['gender'].touched && formPage.hasError('required',['gender'])" msg="required"></div>
+            </div>
+
+        </div>
+
+
+        <div>
+            <img class="w-max-per-100" [src]="imageUrl" *ngIf="imageUrl">
+        </div>
+        <div class="flex-row i-file-upload-wrap">
+            <input type="file" class="flex-grow w-50 cursor-pointer" ng2FileSelect [uploader]="uploader"/>
+            <div class="i-file-upload-btn flex-row">
+                <button type="button" class="flex-grow bg-color-gray-dark color-gray-light-soft" mat-raised-button>上传图片</button>
+            </div>
+        </div>
+
+
+        <div class="flex-row justify-content-end p-t-20">
+            <button type="submit" class="font-offline-rough font-size-12 bg-color-gray-light-soft tappable" mat-flat-button>
+                &lt;&lt;&nbsp;SAVE&nbsp;&gt;&gt;
+            </button>
+        </div>
+    </form>
+
+</div>

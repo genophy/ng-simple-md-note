@@ -1,0 +1,41 @@
+<div class="p-t-50">
+
+    <form [formGroup]="formPage" class="border-a-gray p-v-20 p-h-50 w-300 m-auto" (submit)="btnOnUpdate()">
+        <div class="flex-row  align-items-center p-v-10">
+            <div class="flex-shrink font-old-stamper w-80">name</div>
+            <div>{{userName}}</div>
+        </div>
+        <div class="p-v-10">
+            <div class="font-size-12 flex-row align-items-center">
+                <mat-form-field class="flex-grow">
+                    <div matPrefix class="font-offline-rough w-80">Password</div>
+                    <input type="password" maxlength="50" matInput formControlName="password">
+                    <mat-error *ngIf="formPage.hasError('required',['password'])">required</mat-error>
+                    <mat-error *ngIf="formPage.hasError('minlength',['password'])">least 6 character</mat-error>
+                    <mat-hint align="end" appContentLimitTip [limitContent]="formPage.controls['password'].value" [limitMax]="200"></mat-hint>
+                    <button tabindex="-1" type="button" matSuffix mat-icon-button *ngIf="formPage.controls['password'].value" (click)="formPage.controls['password'].patchValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="font-size-12 flex-row align-items-center">
+                <mat-form-field class="flex-grow">
+                    <div matPrefix class="font-offline-rough w-80">rePassword</div>
+                    <input type="password" maxlength="50" matInput formControlName="rePassword">
+                    <mat-error *ngIf="formPage.hasError('equal',['rePassword'])">must equal to password</mat-error>
+                    <mat-hint align="end" appContentLimitTip [limitContent]="formPage.controls['rePassword'].value" [limitMax]="200"></mat-hint>
+                    <button tabindex="-1" type="button" matSuffix mat-icon-button *ngIf="formPage.controls['rePassword'].value" (click)="formPage.controls['rePassword'].patchValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="flex-row justify-content-end">
+            <button type="submit" class="font-offline-rough font-size-12 bg-color-gray-light-soft tappable" mat-flat-button>
+                &lt;&lt;&nbsp;SAVE&nbsp;&gt;&gt;
+            </button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,80 @@
+<form [formGroup]="formBlog" (submit)="btnSave()" class="w-1000 m-auto h-per-100 flex-row">
+    <div class="flex-grow flex-column p-h-50 p-b-20  border-h-gray">
+        <div class="flex-shrink text-right p-t-10">
+            <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="btnGoBack()">
+                X Close
+            </button>
+
+        </div>
+        <div class="flex-shrink  flex-row align-items-center ">
+            <div class="i-label ">TITLE</div>
+            <mat-form-field class="flex-grow p-l-100">
+                <input matInput maxlength="50" formControlName="title">
+                <mat-error *ngIf="formBlog.hasError('required',['title'])">required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="flex-row">
+            <div class="flex-grow m-t-30">
+                <div class="i-label ">CATEGORY</div>
+                <div>
+                    <mat-form-field>
+                        <mat-select formControlName="category_id">
+                            <mat-option value="" disabled="">-- ALL --</mat-option>
+                            <mat-option [value]="category.id" *ngFor="let category of categoryList">{{category.name}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formBlog.hasError('required',['category_id'])">required</mat-error>
+                    </mat-form-field>
+                </div>
+                <!--<div class="flex-row align-items-center  ">
+                    <div class="font-old-stamper font-size-24">KEYWORDS</div>
+                    <div class="flex-row align-items-center p-l-100">
+                        <mat-form-field>
+                            <input matInput>
+                        </mat-form-field>
+                        <button type="button" class="font-dat-box font-size-24  bg-color-gray-light-soft tappable" mat-flat-button>
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="i-key-list">
+                    <div class="i-key-list-item">C++<span class="font-old-stamper p-l-5 cursor-pointer">x</span></div>
+                    <div class="i-key-list-item">Java<span class="font-old-stamper p-l-5 cursor-pointer">x</span></div>
+                    <div class="i-key-list-item">Nodejs<span class="font-old-stamper p-l-5 cursor-pointer">x</span></div>
+                    <div class="i-key-list-item">PythonPythonPythonPython<span class="font-old-stamper p-l-5 cursor-pointer">x</span></div>
+                </div>-->
+            </div>
+            <div class="flex-shrink w-200 p-a-10 flex-column">
+                <div class="flex-shrink font-size-12 color-gray">
+                    review
+                </div>
+                <div class="hljs flex-grow overflow-y border-a-gray">
+                    <div [innerHTML]="mdValue">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex-grow flex-shrink flex-row h-min-100">
+            <div class="position-relative flex-grow flex-column p-a-10" ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
+                 (onFileDrop)="onFileDrop($event)" [uploader]="uploader">
+                <textarea class="flex-grow p-a-5 text-input-md " formControlName="content">
+                </textarea>
+            </div>
+        </div>
+
+        <div class="flex-shrink text-right">
+            <span class="color-gray font-size-12 m-r-50" *ngIf="updateDate">last change: {{updateDate}}</span>
+
+            <button type="submit" class="font-old-stamper font-size-28  bg-color-gray-light-soft tappable" [disabled]="isSubmitting" mat-flat-button>
+                &lt;&lt;&nbsp;Save&nbsp;&gt;&gt;
+            </button>
+        </div>
+
+
+    </div>
+
+
+</form>

@@ -1,0 +1,57 @@
+<div class=" p-a-20 flex-row">
+    <div class="flex-shrink  w-100 text-center">
+        <div class="i-user-img">
+            <img [src]="itemInfo['user_image_id'] | imageUrlById" *ngIf="itemInfo['user_image_id']">
+        </div>
+        <div class="i-user-name">
+            {{itemInfo['user_name']}}
+        </div>
+
+        <div class="font-offline-rough font-size-12 color-gray-dark p-t-20">
+            [{{itemInfo['category_name']}}]
+        </div>
+    </div>
+    <div class="flex-grow flex-column">
+
+        <div class="flex-shrink flex-row justify-content-space-between align-items-center p-b-10">
+            <div class="flex-row align-items-center">
+                <span class="font-offline-rough font-size-24">{{itemInfo['title']}}</span>
+                <!--<span class="font-offline-rough font-size-16 p-l-20 color-gray">[{{itemInfo['category_name']}}]</span>-->
+                <span class="font-offline-rough font-size-12 p-l-20 color-gray">{{itemInfo['create_date']}}</span>
+            </div>
+            <div class="flex-row align-items-center">
+                <span class="font-offline-rough font-size-12 p-l-20">{{itemInfo['update_date']}}</span>
+                <mat-icon>update</mat-icon>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+        <div class="flex-shrink p-v-10 no-overflow word-break h-max-50 i-content">
+            <div [innerHTML]="mdContent">
+            </div>
+        </div>
+        <div class="flex-shrink m-v-10 flex-row align-items-center justify-content-space-between no-select">
+            <div class="flex-shrink flex-row align-items-center">
+                <div class="flex-row align-items-center m-r-10">
+                    <mat-icon>visibility</mat-icon>
+                    <span class="p-h-5 font-old-stamper font-size-18">{{itemInfo['watched']}}</span>
+                </div>
+            </div>
+            <div class="flex-shrink align-items-center">
+                <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="btnDeleteBlogByBlogId(itemInfo['id'])"
+                        *ngIf="true === isForCurrentUser"> DELETE&nbsp;&gt;&gt;
+                </button>
+
+                <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="gotoBlogDetailForEdit()" *ngIf="true === isForCurrentUser"> EDIT&nbsp;&gt;&gt;</button>
+
+                <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="gotoBlogDetailForView()"> VIEW
+                    IT&nbsp;&gt;&gt;
+                </button>
+            </div>
+
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+
+
+</div>

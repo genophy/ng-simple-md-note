@@ -1,0 +1,53 @@
+<div class="flex-column h-per-100">
+    <div class="flex-shrink bg-color-dark no-select">
+        <div class="w-1000  m-auto flex-row justify-content-space-between align-items-center h-50 line-h-50 color-gray-light-soft">
+            <div class="flex-row">
+                <span class="font-dameronoutital font-size-40 cursor-pointer m-r-50" (click)="btnGotoHomePage()">Simple BLOG</span>
+
+                <div class="p-t-5 p-l-30" *ngIf="true === isLogin">
+                    <span class="p-h-10 font-size-14 font-offline-rough tappable" (click)="btnGotoMyBlogList()">MyBlog</span>
+                </div>
+
+                <div class="p-t-5 p-l-30">
+                    <span class="p-h-10 font-size-14 font-offline-rough tappable" (click)="btnGotoAbout()">About</span>
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <button type="button" class="font-old-stamper bg-color-dark color-gray-light-soft" mat-flat-button (click)="btnGotoLogin()" *ngIf="false ===isLogin"> login</button>
+                <button type="button" class="bg-color-dark color-gray-light-soft" mat-flat-button (click)="btnNewMdBlog()" *ngIf="true ===isLogin">
+                    <mat-icon>add_circle</mat-icon>
+                    <span class="font-old-stamper ">New</span>
+                </button>
+                <button type="button" class="bg-color-dark color-gray-light-soft" mat-flat-button [matMenuTriggerFor]="userMenu" *ngIf="true === isLogin">
+                    <mat-icon>person_outline</mat-icon>
+                    <span class="font-old-stamper ">USER</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="flex-grow flex-column overflow-y m-v-10 position-relative">
+        <div class="m-auto w-1000 flex-grow position-relative">
+            <div class="i-container">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="btnGotoSettings()">
+        <mat-icon>settings</mat-icon>
+        <span class="font-old-stamper font-size-16">SETTINGS</span>
+    </button>
+    <button mat-menu-item (click)="btnLogOut()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span class="font-old-stamper font-size-16">EXIT</span>
+    </button>
+
+</mat-menu>

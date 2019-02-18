@@ -1,0 +1,56 @@
+.i-label {
+  font-family : BlogOldStamper, BlogZHBenMoJinHei, serif;
+  margin-top  : 50px;
+
+}
+
+
+.i-category-list {
+  padding     : 5px 0;
+  font-family : BlogOfflineRough, BlogZHBenMoJinHei, serif;
+  font-size   : 12px;
+  text-align  : right;
+
+  .i-category-list-item {
+    padding            : 10px;
+    cursor             : pointer;
+    max-width          : 190px;
+    overflow           : hidden;
+    text-overflow      : ellipsis;
+    -webkit-box-orient : vertical;
+    -webkit-line-clamp : 1;
+
+    &:hover {
+      text-decoration : underline;
+    }
+
+    &.selected {
+      color      : #F3F3F3;
+      background : #222;
+    }
+  }
+}
+
+.i-key-list {
+  padding     : 5px 0;
+  display     : flex;
+  flex-flow   : row wrap;
+  font-size   : 12px;
+  font-family : BlogOfflineRough, BlogZHBenMoJinHei, serif;
+
+  > .i-key-list-item {
+
+    margin-right       : 5px;
+    padding            : 5px;
+    cursor             : pointer;
+    max-width          : 80px;
+    overflow           : hidden;
+    text-overflow      : ellipsis;
+    -webkit-box-orient : vertical;
+    -webkit-line-clamp : 1;
+
+    &:hover {
+      text-decoration : underline;
+    }
+  }
+}

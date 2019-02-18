@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "http://520space.com:5000",
+    "secure": false
+  }
+}

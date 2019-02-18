@@ -1,0 +1,35 @@
+<div class="w-400 h-max-400 overflow-none h-300 flex-column justify-content-center" cdkFocusInitial>
+    <mat-progress-bar *ngIf="clickDisabled" mode="indeterminate"></mat-progress-bar>
+    <div class="flex-shrink flex-row align-items-center font-size-16 font-bold p-h-10 bg-color-gray-light-soft h-40 p-h-10" >
+        <div flex-grow [ngClass]="{'color-red':isError}">
+            {{title}}
+        </div>
+        <div class="flex-shrink">
+            <button type="button" [disabled]="clickDisabled" tabindex="-1" mat-icon-button (click)="close(false)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="flex-grow flex-column align-items-center overflow-y p-h-20 p-b-20 border-t-gray-light-soft">
+        <div class="m-auto text-center" [ngClass]="{'color-red':isError}">
+            <div class="word-break" [innerHTML]="msg|htmlConvert"></div>
+        </div>
+    </div>
+    <div class="flex-shrink flex-row justify-content-center p-b-20">
+        <div class="p-a-10" *ngIf="!hiddenCancel">
+            <button type="button" [disabled]="clickDisabled" mat-raised-button  class="w-100 bg-color-gray-light color-gray-light-soft" (click)="close(false)">
+                {{btnCancelStr}}
+            </button>
+        </div>
+        <div p-a-10>
+            <button type="button" class="bg-color-gray-light w-100" [disabled]="clickDisabled" mat-raised-button
+                    (click)="close(true)">{{btnOkStr}}
+            </button>
+            <div class="text-center p-t-5 font-size-10 bg-color-gray-light-soft" *ngIf="-1 < debounceSecondForClose">
+                <span>({{debounceSecondForClose}}s left)</span>
+            </div>
+        </div>
+
+
+    </div>
+</div>

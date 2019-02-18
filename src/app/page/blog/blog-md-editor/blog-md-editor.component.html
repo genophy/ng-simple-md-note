@@ -1,0 +1,50 @@
+<form [formGroup]="formBlog" (submit)="btnSave()" class="w-1000 m-auto h-per-100 flex-column">
+    <div class="flex-shrink text-right p-t-10">
+        <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="btnGoBack()">
+            X Close
+        </button>
+
+    </div>
+    <div class="flex-shrink  flex-row  align-items-center ">
+        <div class="flex-grow flex-row align-items-center">
+            <div class="i-label ">TITLE</div>
+            <mat-form-field class="flex-grow p-l-20">
+                <input matInput maxlength="50" formControlName="title">
+                <mat-error *ngIf="formBlog.hasError('required',['title'])">required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class=" flex-row p-l-20 align-items-center">
+            <div class="i-label ">CATEGORY</div>
+            <div class="p-l-20">
+                <mat-form-field>
+                    <mat-select formControlName="category_id">
+                        <mat-option value="" disabled="">-- ALL --</mat-option>
+                        <mat-option [value]="category.id" *ngFor="let category of categoryList">{{category.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="formBlog.hasError('required',['category_id'])">required</mat-error>
+                </mat-form-field>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="flex-grow flex-column">
+
+        <md-editor class="flex-grow p-v-20 no-overflow" name="Content"
+                   [upload]="doUpload"
+                   height="100%"
+                   formControlName="content"
+                   [mode]="'editor'"
+                   [options]="mdEditorOptions"
+                   required
+                   maxlength="50000">
+        </md-editor>
+    </div>
+    <div class="flex-shrink text-right">
+        <span class="color-gray font-size-12 m-r-50" *ngIf="updateDate">last change: {{updateDate}}</span>
+
+        <button type="submit" class="font-old-stamper font-size-28  bg-color-gray-light-soft tappable" [disabled]="isSubmitting" mat-flat-button>
+            &lt;&lt;&nbsp;Save&nbsp;&gt;&gt;
+        </button>
+    </div>
+</form>

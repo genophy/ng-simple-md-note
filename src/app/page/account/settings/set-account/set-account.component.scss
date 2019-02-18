@@ -1,0 +1,17 @@
+.i-file-upload-wrap {
+
+  height   : 40px;
+  position : relative;
+
+  .i-file-upload-btn {
+    position       : absolute;
+    left           : 0;
+    right          : 0;
+    top            : 0;
+    bottom         : 0;
+    pointer-events : none;
+    z-index        : 1;
+
+  }
+
+}

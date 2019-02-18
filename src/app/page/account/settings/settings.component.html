@@ -1,0 +1,26 @@
+<div class="flex-row h-per-100">
+
+    <div class="flex-shrink w-200 border-r-dashed-gray">
+        <div class="flex-column m-b-10">
+            <button mat-flat-button class="font-old-stamper font-size-20 tappable" (click)="btnGotoSetAccount()">
+                Account
+            </button>
+        </div>
+        <div class="flex-column m-b-10" *ngIf="isSetCategoryVisible">
+            <button mat-flat-button class="font-old-stamper font-size-20 tappable" (click)="btnGotoSetCategory()">
+                Category
+            </button>
+        </div>
+        <div class="flex-column m-b-10">
+            <button mat-flat-button class="font-old-stamper font-size-20 tappable" (click)="btnGotoSetPwd()">
+                Password
+            </button>
+        </div>
+
+    </div>
+    <div class="flex-grow overflow-y">
+        <router-outlet></router-outlet>
+    </div>
+
+
+</div>

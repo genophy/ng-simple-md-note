@@ -1,0 +1,29 @@
+<div class="p-t-50">
+    <div class="border-a-gray p-v-20 p-h-50 w-500 m-auto">
+        <form class="flex-row align-items-center justify-content-end m-b-20" [formGroup]="formPage" (submit)="btnAddCategory()">
+            <div class="flex-row w-200 p-r-10">
+                <mat-form-field class="flex-grow">
+                    <input matInput maxlength="50" formControlName="name">
+                    <button tabindex="-1" type="button" matSuffix mat-icon-button *ngIf="formPage.controls['name'].value" (click)="formPage.controls['name'].patchValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-flat-button class="font-old-stamper font-size-24">ADD</button>
+            </div>
+        </form>
+        <div>
+            <mat-chip-list>
+                <mat-chip *ngFor="let category of categoryList" [selectable]="false" [selected]="false"
+                          [removable]="true" (removed)="btnRemove(category)">
+                    {{category.name}}
+                    <mat-icon matChipRemove>cancel</mat-icon>
+                </mat-chip>
+            </mat-chip-list>
+            <div class="p-t-100 text-center" *ngIf="dataLoaded && !categoryList[0]"> -- 暂无数据 --</div>
+        </div>
+
+    </div>
+
+</div>

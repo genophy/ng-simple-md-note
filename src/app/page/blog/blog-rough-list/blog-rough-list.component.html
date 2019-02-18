@@ -1,0 +1,46 @@
+<div class="flex-row h-per-100">
+    <div class="flex-shrink flex-column w-200 no-select">
+        <div class="flex-shrink i-label">CATEGORY</div>
+        <div class="flex-grow flex-column i-category-list">
+            <div class="flex-shrink i-category-list-item border-b-gray" [ngClass]="{'selected':'' === currentCategoryIdSelected}" (click)="btnSearchByCategoryId()">-- ALL --
+                <span class="p-h-5">[ {{blogTotalByCategory}} ]</span>
+            </div>
+            <div class="flex-grow overflow-y p-b-50">
+                <div class="i-category-list-item" [ngClass]="{'selected':category.id === currentCategoryIdSelected}" *ngFor="let category of categoryList"
+                     (click)="btnSearchByCategoryId(category.id)">{{category.name}}
+                    <span class="p-h-5" [ngClass]="{'color-gray-dark':!category.blog_count}">[ {{category.blog_count}} ]</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="flex-grow flex-column">
+        <form [formGroup]="formSearch" class="flex-shrink flex-row align-items-center justify-content-end" (submit)="queryAll()">
+            <div class=" w-200 flex-row align-items-center m-r-20">
+                <mat-form-field class="flex-grow">
+                    <input matInput placeholder="Author" formControlName="user_name">
+                    <button tabindex="-1" type="button" matSuffix mat-icon-button *ngIf="formSearch.controls['user_name'].value" (click)="formSearch.controls['user_name'].patchValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class=" w-200 flex-row align-items-center m-r-20">
+                <mat-form-field class="flex-grow">
+                    <input matInput placeholder="Content" formControlName="content">
+                    <button tabindex="-1" type="button" matSuffix mat-icon-button *ngIf="formSearch.controls['content'].value" (click)="formSearch.controls['content'].patchValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <button type="submit" class="font-old-stamper font-size-24 bg-color-gray-light-soft" mat-flat-button> Search&nbsp;&gt;&gt;</button>
+        </form>
+        <div class="flex-grow overflow-y">
+            <div *ngFor="let blogItem of blogList">
+                <app-blog-rough-list-item [itemInfo]="blogItem" m-b-50></app-blog-rough-list-item>
+            </div>
+            <div class="p-t-100 text-center" *ngIf="dataLoaded && !blogList[0]"> -- 暂无数据 --</div>
+        </div>
+
+    </div>
+
+</div>

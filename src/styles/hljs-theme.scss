@@ -1,0 +1,150 @@
+.hljs, .md-editor-container {
+  pre {
+    margin        : 5px;
+    padding       : 5px;
+    border        : 1px solid #888;
+    border-radius : 2px;
+  }
+
+  ul, ol {
+    list-style   : disc inside;
+    padding-left : 10px;
+  }
+
+  blockquote {
+    background : #EEE;
+  }
+
+  p {
+    padding : 5px 0;
+  }
+
+  h1 {
+    font-size : 32px;
+  }
+
+  h2 {
+    font-size : 28px;
+  }
+
+  h3 {
+    font-size : 24px;
+  }
+
+  h4 {
+    font-size : 20px;
+  }
+
+  h5 {
+    font-size : 18px;
+  }
+
+  h6 {
+    font-size : 16px;
+  }
+
+}
+
+p > img {
+  max-width : 100%;
+}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display    : block;
+  overflow-x : auto;
+  padding    : 0.5em;
+  color      : #333;
+  background : #F3F3F3;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color      : #998;
+  font-style : italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color       : #333;
+  font-weight : bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color : #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color : #D14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color       : #900;
+  font-weight : bold;
+}
+
+.hljs-subst {
+  font-weight : normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color       : #458;
+  font-weight : bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color       : #000080;
+  font-weight : normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color : #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color : #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color : #0086B3;
+}
+
+.hljs-meta {
+  color       : #999;
+  font-weight : bold;
+}
+
+.hljs-deletion {
+  background : #FDD;
+}
+
+.hljs-addition {
+  background : #DFD;
+}
+
+.hljs-emphasis {
+  font-style : italic;
+}
+
+.hljs-strong {
+  font-weight : bold;
+}

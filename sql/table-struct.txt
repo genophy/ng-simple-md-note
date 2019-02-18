@@ -1,0 +1,50 @@
+# db_ng_blog
+
+==  t_user
+id: str-uuid :50
+name: str :200
+gender: str :50
+pwd: str :200
+create_date: str (yyyy-MM-dd hh:mm:ss)  :50
+image_id: str :50
+is_admin: number
+// e.g postgresql
+// create table t_user ( id varchar(50), name varchar(200),pwd varchar(200),create_date varchar(50) , image_id varchar(50) ,is_admin serial);
+
+== t_blog
+id: str-uuid :50
+create_user_id: str : 50
+title: str :200
+category_id: str :50
+key_word_ids: str :1000
+content: str :text
+watched: number
+create_date: str (yyyy-MM-dd hh:mm:ss) : 50
+update_date: str (yyyy-MM-dd hh:mm:ss) : 50
+// e.g postgresql
+// create table t_blog ( id varchar(50), user_id varchar(50), title varchar(200), category_id varchar(50), key_word_ids varchar(1000), content text, watched serial, create_date varchar(50), update_date varchar(50));
+
+
+== t_category
+id: str-uuid :50
+name: str :200
+create_user_id: str :50
+create_date: str :50
+// e.g postgresql
+// create table t_category ( id varchar(50), name varchar(200),create_user_id varchar(50), create_date varchar(50));
+
+== t_key_word
+id: str-uuid :50
+name: str :200
+create_user_id: str :50
+create_date: str :50
+// e.g postgresql
+// create table t_key_word ( id varchar(50), name varchar(200),create_user_id varchar(50), create_date varchar(50));
+
+== t_images
+id: str-uuid :50
+path: str :500
+create_user_id: str :50
+create_date: str :50
+// e.g postgresql
+// create table t_images ( id varchar(50), path varchar(500), create_user_id varchar(50), create_date varchar(50);
