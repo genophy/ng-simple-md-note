@@ -1,13 +1,13 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import {Router}                               from '@angular/router';
-import hljs                   from 'highlight.js/lib/highlight';
-import * as marked            from 'marked';
-import {BlogService}          from '../../../../api/blog.service';
-import {AppModalLib}          from '../../../../library/app-modal.lib';
-import {DialogParams}         from '../../../../library/material-ui/dialog-scope/dialog-params';
-import {BlogListChangeHelper} from '../../../../reducers/blog-list-change/blog-list-change-helper.service';
-import {Constants}            from '../../../../util/constants';
-import {CookieUtil}           from '../../../../util/cookie-util';
+import hljs                                   from 'highlight.js/lib/highlight';
+import * as marked                            from 'marked';
+import {BlogService}                          from '../../../../api/blog.service';
+import {AppModalLib}                          from '../../../../library/app-modal.lib';
+import {DialogParams}                         from '../../../../library/material-ui/dialog-scope/dialog-params';
+import {BlogListChangeHelper}                 from '../../../../reducers/blog-list-change/blog-list-change-helper.service';
+import {Constants}                            from '../../../../util/constants';
+import {CookieUtil}                           from '../../../../util/cookie-util';
 
 @Component({
   selector   : 'app-blog-rough-list-item',

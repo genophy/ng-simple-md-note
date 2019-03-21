@@ -34,8 +34,10 @@
                     &lt;&lt;&nbsp;Edit&nbsp;&gt;&gt;
                 </button>
             </div>
-
-            <div>
+            <div class="flex-row">
+                <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="btnPrint()">
+                    Print
+                </button>
                 <button type="button" class="font-old-stamper font-size-16 bg-color-gray-light-soft tappable" mat-flat-button (click)="btnGotoPrevPage()">
                     X&nbsp;CLOSE
                 </button>
@@ -47,14 +49,15 @@
         </div>
         <div class="flex-grow overflow-y flex-column">
             <div class="flex-grow flex-shrink flex-column">
-                <md-editor class="flex-grow p-v-20 no-overflow" name="Content"
+                <!--<md-editor class="flex-grow p-v-20 no-overflow" name="Content"
                            height="100%"
                            [(ngModel)]="mdContent"
                            [mode]="'preview'"
                            [options]="mdEditorOptions"
                            required
                            maxlength="50000">
-                </md-editor>
+                </md-editor>-->
+                <app-blog-md-viewer-content [mdContent]="mdContent" ></app-blog-md-viewer-content>
             </div>
             <!-- no login -->
             <div class="flex-shrink i-blog-end">

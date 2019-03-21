@@ -21,20 +21,22 @@ import {SettingsComponent}            from './page/account/settings/settings.com
 import {BlankComponent}               from './page/blank/blank.component';
 import {BlogDiscussLineComponent}     from './page/blog/blog-discuss/blog-discuss-line/blog-discuss-line.component';
 import {BlogDiscussListItemComponent} from './page/blog/blog-discuss/blog-discuss-list/blog-discuss-list-item/blog-discuss-list-item.component';
-import {BlogDiscussListComponent}     from './page/blog/blog-discuss/blog-discuss-list/blog-discuss-list.component';
-import {BlogEditorComponent}          from './page/blog/blog-editor/blog-editor.component';
-import {BlogMdEditorComponent}        from './page/blog/blog-md-editor/blog-md-editor.component';
-import {BlogMdViewerComponent}        from './page/blog/blog-md-viewer/blog-md-viewer.component';
-import {BlogRoughListItemComponent}   from './page/blog/blog-rough-list/blog-rough-list-item/blog-rough-list-item.component';
-import {BlogRoughListComponent}       from './page/blog/blog-rough-list/blog-rough-list.component';
-import {BlogViewerComponent}          from './page/blog/blog-viewer/blog-viewer.component';
-import {MyBlogListItemComponent}      from './page/blog/my-blog-list/my-blog-list-item/my-blog-list-item.component';
-import {MyBlogListComponent}          from './page/blog/my-blog-list/my-blog-list.component';
-import {LoginComponent}               from './page/login/login.component';
-import {RegisterComponent}            from './page/login/register/register.component';
-import {MainComponent}                from './page/main/main.component';
-import {PipeModule}                   from './pipe/pipe.module';
-import {metaReducers, reducers}       from './reducers';
+import {BlogDiscussListComponent}      from './page/blog/blog-discuss/blog-discuss-list/blog-discuss-list.component';
+import {BlogEditorComponent}           from './page/blog/blog-editor/blog-editor.component';
+import {BlogMdEditorComponent}         from './page/blog/blog-md-editor/blog-md-editor.component';
+import {BlogMdViewerContentComponent}  from './page/blog/blog-md-viewer/blog-md-viewer-content/blog-md-viewer-content.component';
+import {BlogMdViewerComponent}         from './page/blog/blog-md-viewer/blog-md-viewer.component';
+import {BlogPrintViewContentComponent} from './page/blog/blog-print-view-content/blog-print-view-content.component';
+import {BlogRoughListItemComponent}    from './page/blog/blog-rough-list/blog-rough-list-item/blog-rough-list-item.component';
+import {BlogRoughListComponent}        from './page/blog/blog-rough-list/blog-rough-list.component';
+import {BlogViewerComponent}           from './page/blog/blog-viewer/blog-viewer.component';
+import {MyBlogListItemComponent}       from './page/blog/my-blog-list/my-blog-list-item/my-blog-list-item.component';
+import {MyBlogListComponent}           from './page/blog/my-blog-list/my-blog-list.component';
+import {LoginComponent}          from './page/login/login.component';
+import {RegisterComponent}       from './page/login/register/register.component';
+import {MainComponent}           from './page/main/main.component';
+import {PipeModule}              from './pipe/pipe.module';
+import {metaReducers, reducers}  from './reducers';
 
 const components = [
   AboutComponent,
@@ -58,6 +60,8 @@ const components = [
   SetCategoryComponent,
   SetPwdComponent,
   SettingsComponent,
+  BlogMdViewerContentComponent,
+  BlogPrintViewContentComponent
 ];
 
 @NgModule({

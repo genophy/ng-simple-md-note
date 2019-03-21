@@ -3,18 +3,19 @@ import {RouterModule, Routes}   from '@angular/router';
 import {AboutComponent}         from './page/account/about/about.component';
 import {SetAccountComponent}    from './page/account/settings/set-account/set-account.component';
 import {SetCategoryComponent}   from './page/account/settings/set-category/set-category.component';
-import {SetPwdComponent}        from './page/account/settings/set-pwd/set-pwd.component';
-import {SettingsComponent}      from './page/account/settings/settings.component';
-import {BlankComponent}         from './page/blank/blank.component';
-import {BlogEditorComponent}    from './page/blog/blog-editor/blog-editor.component';
-import {BlogMdEditorComponent}  from './page/blog/blog-md-editor/blog-md-editor.component';
-import {BlogMdViewerComponent}  from './page/blog/blog-md-viewer/blog-md-viewer.component';
-import {BlogRoughListComponent} from './page/blog/blog-rough-list/blog-rough-list.component';
-import {BlogViewerComponent}    from './page/blog/blog-viewer/blog-viewer.component';
-import {MyBlogListComponent}    from './page/blog/my-blog-list/my-blog-list.component';
-import {LoginComponent}         from './page/login/login.component';
-import {MainComponent}          from './page/main/main.component';
-import {AuthService}            from './service/auth.service';
+import {SetPwdComponent}               from './page/account/settings/set-pwd/set-pwd.component';
+import {SettingsComponent}             from './page/account/settings/settings.component';
+import {BlankComponent}                from './page/blank/blank.component';
+import {BlogEditorComponent}           from './page/blog/blog-editor/blog-editor.component';
+import {BlogMdEditorComponent}         from './page/blog/blog-md-editor/blog-md-editor.component';
+import {BlogMdViewerComponent}         from './page/blog/blog-md-viewer/blog-md-viewer.component';
+import {BlogPrintViewContentComponent} from './page/blog/blog-print-view-content/blog-print-view-content.component';
+import {BlogRoughListComponent}        from './page/blog/blog-rough-list/blog-rough-list.component';
+import {BlogViewerComponent}           from './page/blog/blog-viewer/blog-viewer.component';
+import {MyBlogListComponent}           from './page/blog/my-blog-list/my-blog-list.component';
+import {LoginComponent}                from './page/login/login.component';
+import {MainComponent}                 from './page/main/main.component';
+import {AuthService}                   from './service/auth.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -39,6 +40,8 @@ const routes: Routes = [
       {path: '**', redirectTo: 'blog-list', pathMatch: 'full'},
     ],
   },
+  {path: 'blog-print-view-content/:id', component: BlogPrintViewContentComponent},
+
   {path: 'login', component: LoginComponent},
   {path: 'blank', component: BlankComponent},
   {path: '**', redirectTo: 'main', pathMatch: 'full'},

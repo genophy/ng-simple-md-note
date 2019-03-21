@@ -1,0 +1,11 @@
+<div class="m-auto w-800">
+    <md-editor class="flex-grow p-v-20 no-overflow" name="Content"
+               height="100%"
+               [(ngModel)]="mdContent"
+               [mode]="'preview'"
+               [options]="mdEditorOptions"
+               required
+               maxlength="50000">
+    </md-editor>
+</div>
+
